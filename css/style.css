@@ -1,0 +1,376 @@
+/* General Body and Container */
+body {
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #f0f2f5; /* Light gray background */
+  color: #333;
+  line-height: 1.6;
+}
+
+.app-container {
+  max-width: 1400px; /* Max width for larger screens */
+  margin: 0 auto; /* Center the container */
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden; /* To handle border-radius correctly */
+  min-height: 95vh; /* Ensure it takes most of the viewport height */
+  margin-top: 2.5vh; /* Small margin from top */
+  margin-bottom: 2.5vh; /* Small margin from bottom */
+}
+
+.row.min-vh-100 {
+  min-height: unset !important; /* Override Bootstrap's min-vh-100 for custom app-container height */
+}
+
+.project-list-panel {
+  background-color: #ffffff; /* White background for left panel */
+  border-right: 1px solid #e0e0e0; /* Subtle separator */
+  padding: 30px !important; /* More padding */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+}
+
+.project-list-panel h2 {
+  font-weight: 600;
+  color: #2c3e50; /* Darker heading color */
+  margin-bottom: 2rem !important;
+  font-size: 1.8rem;
+}
+
+.add-project-btn {
+  background-color: #4caf50; /* Green button */
+  border-color: #4caf50;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 4px 8px rgba(76, 175, 80, 0.2);
+}
+.add-project-btn:hover {
+  background-color: #45a049;
+  border-color: #45a049;
+  transform: translateY(-1px);
+}
+.add-project-btn:active {
+  transform: translateY(0);
+}
+
+.project-items-list {
+  --bs-list-group-border-radius: 8px; /* Slightly rounded corners */
+  --bs-list-group-border-width: 0; /* Remove default border */
+  flex-grow: 1; /* Allow list to take available space */
+}
+
+/* Project Item Styling */
+.list-group-item {
+  cursor: pointer;
+  margin-bottom: 15px; /* Spacing between project items */
+  border: 1px solid #e0e0e0; /* Light border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* More internal padding */
+  transition: all 0.2s ease-in-out;
+  background-color: #fdfdfd;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.list-group-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  border-color: #c0c0c0;
+}
+
+.project-header h5 {
+  font-weight: 600;
+  color: #34495e;
+  font-size: 1.25rem;
+  margin-bottom: 0;
+}
+
+.project-details {
+  margin-top: 15px;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.project-details .badge {
+  font-size: 0.85em;
+  padding: 0.4em 0.7em;
+  border-radius: 4px;
+  font-weight: 500;
+  margin-right: 5px;
+}
+
+.progress {
+  height: 8px; /* Thinner progress bar */
+  border-radius: 4px;
+  background-color: #e9ecef; /* Lighter background for progress bar */
+  overflow: hidden;
+}
+
+.progress-bar {
+  background-color: #6c757d; /* Default progress bar color */
+  transition: width 0.3s ease-in-out;
+}
+.progress-bar.bg-info {
+  background-color: #007bff !important; /* Blue for in progress */
+}
+.progress-bar.bg-success {
+  background-color: #28a745 !important; /* Green for done */
+}
+
+.project-item .task-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 20px;
+  border-top: 1px dashed #e0e0e0; /* Lighter, subtle dash */
+  padding-top: 20px;
+}
+
+.project-item .task-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #f2f2f2; /* Very light separator */
+  font-size: 0.95em;
+  color: #555;
+  cursor: pointer;
+}
+.project-item .task-list-item:hover {
+  background-color: #f8f8f8;
+  border-radius: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.project-item .task-list-item:last-child {
+  border-bottom: none;
+}
+
+.project-item .task-list-item span .badge {
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.add-task-btn,
+.edit-task-btn,
+.edit-project-btn {
+  font-size: 0.85em;
+  padding: 5px 12px;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.add-task-btn {
+  background-color: #20c997;
+  border-color: #20c997;
+  color: white;
+}
+.add-task-btn:hover {
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+
+.edit-task-btn,
+.edit-project-btn {
+  color: #007bff;
+  border-color: #007bff;
+  background-color: transparent;
+}
+.edit-task-btn:hover,
+.edit-project-btn:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.right-panel {
+  background-color: #f8f9fa;
+  position: relative;
+  overflow: hidden; /* For sliding effect */
+}
+
+.form-container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 20px; /* Offset from top */
+  right: 20px; /* Offset from right */
+  bottom: 20px; /* Offset from bottom */
+  left: 20px; /* Offset from left */
+  width: auto;
+  transform: translateX(105%);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 10;
+  overflow-y: auto; /* For long forms */
+  border: 1px solid #e0e0e0;
+}
+
+.form-container.active {
+  transform: translateX(0); /* Slide in */
+}
+
+.form-container h2 {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 1.7rem;
+}
+
+.form-label {
+  font-weight: 500;
+  color: #4a4a4a;
+  margin-bottom: 0.5rem;
+}
+
+.form-control,
+.form-select {
+  border-radius: 8px;
+  border: 1px solid #d0d0d0;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.form-control:focus,
+.form-select:focus {
+  border-color: #8bbce1;
+  box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+  outline: none;
+}
+
+.form-control-lg {
+  padding: 1rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+.form-actions .btn {
+  padding: 10px 25px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+.btn-danger:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+.btn-success:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+.hide-form-btn {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  font-size: 1rem;
+  color: #6c757d;
+  font-weight: 500;
+  transition: color 0.2s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+.hide-form-btn:hover {
+  color: #495057;
+  transform: translateX(-3px);
+  text-decoration: underline;
+}
+
+.initial-view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f9fa;
+  transition: opacity 0.4s ease-in-out;
+  padding: 20px;
+  text-align: center;
+}
+
+.initial-view.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+  text-align: center;
+}
+.badge-draft {
+  background-color: #adb5bd;
+  color: white;
+}
+.badge-in-progress {
+  background-color: #007bff;
+  color: white;
+}
+.badge-done {
+  background-color: #28a745;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    margin: 0;
+    border-radius: 0;
+    min-height: 100vh;
+    box-shadow: none;
+  }
+
+  .project-list-panel,
+  .right-panel {
+    padding: 20px !important;
+  }
+
+  .project-list-panel {
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .form-container {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 0;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
